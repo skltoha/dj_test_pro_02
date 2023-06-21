@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block template %}
+<ul>
+  {% for menu in menu_items %}
+  <li>{{ menu.name }}</li>
+  {% if menu.menu_set.all %}
+  <ul>
+    {% for submenu in menu.menu_set.all %}
+    <li>{{ submenu.name }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endfor %}
+</ul>
+
+{% endblock template %}
