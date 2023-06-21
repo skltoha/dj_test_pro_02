@@ -1,6 +1,50 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Menu
 
-def menu_view(request):
+def home(request):
+    menu_items = Menu.objects.all() # Retrieve all menu items from the database
+    msg = f'web menu home'
+    context = {
+        'menu_items': menu_items,
+        'msg': msg
+    }
+    return render(request, 'menu.html', context)
+
+
+def service(request):
     menu_items = Menu.objects.all()  # Retrieve all menu items from the database
-    return render(request, 'menu.html', {'menu_items': menu_items})
+    msg = f'web menu service'
+    context = {
+        'menu_items': menu_items,
+        'msg': msg
+    }
+    return render(request, 'menu.html', context)
+
+def about(request):
+    menu_items = Menu.objects.all()  # Retrieve all menu items from the database
+    msg = f'web menu about'
+    context = {
+        'menu_items': menu_items,
+        'msg': msg
+    }
+    return render(request, 'menu.html', context)
+
+
+
+def menu_view_2(request):
+    menu_items = Menu.objects.all()  # Retrieve all menu items from the database
+    msg = f'service menu'
+    context = {
+        'menu_items': menu_items,
+        'msg': msg
+    }
+    return render(request, 'menu.html', context)
+def menu_view_3(request):
+    menu_items = Menu.objects.all()  # Retrieve all menu items from the database
+    msg = f'web menu'
+    context = {
+        'menu_items': menu_items,
+        'msg': msg
+    }
+    return render(request, 'menu.html', context)
+
