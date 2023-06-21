@@ -1,14 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block template %}
 
-{% block template %}
 <ul>
   {% for menu in menu_items %}
-  <li>{{ menu.name }}</li>
+  <li><a href="#">{{ menu.name }}</a></li>
   {% if menu.menu_set.all %}
   <ul>
     {% for submenu in menu.menu_set.all %}
     <li>{{ submenu.name }}</li>
-    {% endfor %}
+    {% if submenu.menu_set.all %}
+    <ul>
+      {% for subsubmenu in submenu.menu_set.all %}
+      <li>{{ subsubmenu.name }}</li>
+      <!-- Add more nested levels if needed -->
+      {% endfor %}
+    </ul>
+    {% endif %} {% endfor %}
   </ul>
   {% endif %} {% endfor %}
 </ul>
