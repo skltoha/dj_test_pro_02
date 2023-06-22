@@ -29,22 +29,3 @@ def about(request):
     }
     return render(request, 'menu.html', context)
 
-
-
-def menu_view_2(request):
-    menu_items = Menu.objects.all()  # Retrieve all menu items from the database
-    msg = f'service menu'
-    context = {
-        'menu_items': menu_items,
-        'msg': msg
-    }
-    return render(request, 'menu.html', context)
-def menu_view_3(request):
-    menu_items = Menu.objects.all()  # Retrieve all menu items from the database
-    msg = f'web menu'
-    context = {
-        'menu_items': menu_items,
-        'msg': msg
-    }
-    return render(request, 'menu.html', context)
-
