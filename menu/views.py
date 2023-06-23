@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Menu
+from product.models import product
 
 def home(request):
     menu_items = Menu.objects.all() # Retrieve all menu items from the database
@@ -12,7 +13,8 @@ def home(request):
 
 
 def service(request):
-    menu_items = Menu.objects.all()  # Retrieve all menu items from the database
+    menu_items = Menu.objects.all() 
+    # Retrieve all menu items from the database
     msg = f'web menu service'
     context = {
         'menu_items': menu_items,

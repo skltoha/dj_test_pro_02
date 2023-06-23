@@ -17,7 +17,8 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMP_DIR = os.path.join(BASE_DIR, 'templates/')
 STATIC_DIR = os.path.join(BASE_DIR, 'static/')
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     
     "menu.apps.MenuConfig",
+    "product.apps.ProductConfig",
 ]
 
 MIDDLEWARE = [
